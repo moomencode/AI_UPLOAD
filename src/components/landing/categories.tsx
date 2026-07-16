@@ -109,7 +109,6 @@ export function Categories({
     >
       <div className="content-wrapper">
         <header className="categories-header">
-          <span className="categories-overline">Menu</span>
           <h2 id="categories-heading" className="heading-1">
             {title}
           </h2>
