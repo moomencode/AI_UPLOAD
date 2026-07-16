@@ -1,9 +1,4 @@
 @layer components {
-  /* ═══════════════════════════════════════════════════════════════════════
-     LANDING HEADER
-     Premium floating glass navigation with depth and subtle border.
-     ═══════════════════════════════════════════════════════════════════════ */
-
   .landing-header {
     position: fixed;
     inset-block-start: 0;
@@ -23,7 +18,6 @@
     border-color: transparent;
   }
 
-  /* ─── Scrolled: Premium floating glass ──────────────────────────── */
   .landing-header-scrolled .landing-header-inner {
     background-color: rgb(255 255 255 / 0.72);
     backdrop-filter: blur(20px);
@@ -31,7 +25,7 @@
     box-shadow:
       0 1px 1px rgb(0 0 0 / 0.04),
       0 4px 20px rgb(0 0 0 / 0.06);
-    border-block-end: 1px solid rgb(0 0 0 / 0.06);
+    border-block-end: 1px solid rgb(201 168 76 / 0.15);
   }
 
   .dark .landing-header-scrolled .landing-header-inner,
@@ -40,10 +34,9 @@
     box-shadow:
       0 1px 1px rgb(0 0 0 / 0.08),
       0 4px 20px rgb(0 0 0 / 0.15);
-    border-block-end: 1px solid rgb(255 255 255 / 0.06);
+    border-block-end: 1px solid rgb(201 168 76 / 0.12);
   }
 
-  /* ─── Inner ─────────────────────────────────────────────────────── */
   .landing-header-inner {
     display: flex;
     align-items: center;
@@ -62,13 +55,33 @@
     }
   }
 
-  /* ─── Logo ──────────────────────────────────────────────────────── */
+  .landing-header-scrolled .landing-header-inner::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--garcia-color-gold) 20%,
+      var(--garcia-color-gold) 80%,
+      transparent
+    );
+    opacity: 0.4;
+  }
+
   .landing-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
     margin-inline-end: auto;
     flex-shrink: 0;
+    transition: transform var(--garcia-duration-slow) var(--garcia-ease-out);
+  }
+
+  .landing-header-scrolled .landing-logo {
+    transform: scale(0.92);
   }
 
   .landing-logo img {
@@ -83,7 +96,6 @@
     }
   }
 
-  /* ─── Desktop Nav ───────────────────────────────────────────────── */
   .landing-nav-desktop {
     display: none;
     align-items: center;
@@ -105,7 +117,7 @@
     color: rgb(255 255 255 / 0.75);
     text-decoration: none;
     padding-block: var(--garcia-spacing-1);
-    transition: color var(--garcia-duration-fast) var(--garcia-ease-out);
+    transition: color var(--garcia-duration-slow) var(--garcia-ease-out);
   }
 
   .landing-nav-link::after {
@@ -118,8 +130,8 @@
     border-radius: 1px;
     transform: scaleX(0);
     transition:
-      transform var(--garcia-duration-fast) var(--garcia-ease-out),
-      background-color var(--garcia-duration-fast) var(--garcia-ease-out);
+      transform var(--garcia-duration-slow) var(--garcia-ease-out),
+      background-color var(--garcia-duration-slow) var(--garcia-ease-out);
   }
 
   .landing-nav-link:hover,
@@ -146,21 +158,19 @@
 
   .landing-header-scrolled .landing-nav-link:hover,
   .landing-header-scrolled .landing-nav-link:focus-visible {
-    color: var(--garcia-text-primary);
+    color: var(--garcia-color-gold-dark);
   }
 
   .landing-header-scrolled .landing-nav-link-active {
     color: var(--garcia-color-gold-dark);
   }
 
-  /* ─── Header Actions ────────────────────────────────────────────── */
   .landing-header-actions {
     display: flex;
     align-items: center;
     gap: var(--garcia-spacing-2);
   }
 
-  /* ─── WhatsApp Button ───────────────────────────────────────────── */
   .landing-whatsapp {
     display: flex;
     align-items: center;
@@ -180,6 +190,7 @@
   .landing-whatsapp:hover,
   .landing-whatsapp:focus-visible {
     background-color: rgb(255 255 255 / 0.12);
+    color: var(--garcia-color-gold-light);
   }
 
   .landing-header-scrolled .landing-whatsapp {
@@ -189,10 +200,9 @@
   .landing-header-scrolled .landing-whatsapp:hover,
   .landing-header-scrolled .landing-whatsapp:focus-visible {
     background-color: var(--garcia-surface-tertiary);
-    color: var(--garcia-text-primary);
+    color: var(--garcia-color-gold-dark);
   }
 
-  /* ─── Desktop CTA ───────────────────────────────────────────────── */
   .landing-header-cta {
     display: none;
   }
@@ -209,16 +219,17 @@
     color: var(--garcia-color-charcoal);
     font-weight: var(--garcia-font-weight-semibold);
     letter-spacing: 0.04em;
+    transition:
+      background var(--garcia-duration-slow) var(--garcia-ease-out),
+      border-color var(--garcia-duration-slow) var(--garcia-ease-out),
+      transform var(--garcia-duration-slow) var(--garcia-ease-out);
   }
 
   .landing-header-cta .btn:hover:not(:disabled) {
     background: var(--garcia-color-gold-dark);
     border-color: var(--garcia-color-gold-dark);
+    transform: translateY(-1px);
   }
-
-  /* ═══════════════════════════════════════════════════════════════════
-     HAMBURGER — Premium Animated
-     ═══════════════════════════════════════════════════════════════════ */
 
   .landing-hamburger {
     position: relative;
@@ -254,26 +265,22 @@
     background-color: currentColor;
     border-radius: 1px;
     transition:
-      transform var(--garcia-duration-fast) var(--garcia-ease-out),
+      transform var(--garcia-duration-normal) var(--garcia-ease-out),
       opacity var(--garcia-duration-fast) var(--garcia-ease-out);
     transform-origin: center;
   }
 
-  .hamburger-open .hamburger-line:nth-child(1) {
+  .nav-mobile-open .hamburger-line:nth-child(1) {
     transform: translateY(6.5px) rotate(45deg);
   }
 
-  .hamburger-open .hamburger-line:nth-child(2) {
+  .nav-mobile-open .hamburger-line:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger-open .hamburger-line:nth-child(3) {
+  .nav-mobile-open .hamburger-line:nth-child(3) {
     transform: translateY(-6.5px) rotate(-45deg);
   }
-
-  /* ═══════════════════════════════════════════════════════════════════
-     MOBILE FULL-SCREEN MENU — Premium Dark Overlay
-     ═══════════════════════════════════════════════════════════════════ */
 
   .nav-mobile-overlay {
     position: fixed;
@@ -349,14 +356,21 @@
     background-color: rgb(255 255 255 / 0.08);
   }
 
-  /* ═══════════════════════════════════════════════════════════════════
-     REDUCED MOTION
-     ═══════════════════════════════════════════════════════════════════ */
+  .nav-mobile-actions::before {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background: var(--garcia-color-gold);
+    opacity: 0.3;
+    margin-inline: auto;
+    margin-bottom: var(--garcia-spacing-2);
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .landing-header,
     .landing-header-inner,
-    .landing-logo-text,
+    .landing-logo,
     .landing-whatsapp,
     .landing-hamburger,
     .hamburger-line,
@@ -364,6 +378,10 @@
     .landing-nav-link,
     .landing-nav-link::after {
       transition: none;
+    }
+
+    .landing-header-scrolled .landing-logo {
+      transform: none;
     }
   }
 }
