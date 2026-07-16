@@ -1,8 +1,11 @@
 @layer components {
   .social {
     background-color: var(--garcia-surface-primary);
-    background-image:
-      radial-gradient(ellipse 50% 40% at 0% 50%, rgb(201 168 76 / 0.03) 0%, transparent 100%);
+    background-image: radial-gradient(
+      ellipse 50% 40% at 0% 50%,
+      rgb(201 168 76 / 0.03) 0%,
+      transparent 100%
+    );
   }
 
   .social-header {

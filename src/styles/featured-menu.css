@@ -1,8 +1,11 @@
 @layer components {
   .featured {
     background-color: var(--garcia-color-ivory);
-    background-image:
-      radial-gradient(ellipse 40% 50% at 100% 50%, rgb(201 168 76 / 0.03) 0%, transparent 100%);
+    background-image: radial-gradient(
+      ellipse 40% 50% at 100% 50%,
+      rgb(201 168 76 / 0.03) 0%,
+      transparent 100%
+    );
   }
 
   .featured-header {
@@ -117,11 +120,7 @@
     z-index: 1;
     padding: var(--garcia-spacing-1) var(--garcia-spacing-3);
     border-radius: var(--garcia-radius-full);
-    background: linear-gradient(
-      135deg,
-      rgb(201 168 76 / 0.9) 0%,
-      rgb(201 168 76 / 0.7) 100%
-    );
+    background: linear-gradient(135deg, rgb(201 168 76 / 0.9) 0%, rgb(201 168 76 / 0.7) 100%);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     color: var(--garcia-color-charcoal);
@@ -222,8 +221,7 @@
     color: var(--garcia-color-gold-dark);
     text-decoration: none;
     padding: var(--garcia-spacing-1) 0;
-    transition:
-      gap var(--garcia-duration-fast) var(--garcia-ease-out);
+    transition: gap var(--garcia-duration-fast) var(--garcia-ease-out);
   }
 
   .featured-card-whatsapp:hover,
