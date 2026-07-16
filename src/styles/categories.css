@@ -1,6 +1,8 @@
 @layer components {
   .categories {
     background-color: var(--garcia-surface-primary);
+    background-image:
+      radial-gradient(ellipse 50% 30% at 50% 0%, rgb(201 168 76 / 0.03) 0%, transparent 100%);
   }
 
   .categories-header {
@@ -8,12 +10,18 @@
     margin-bottom: var(--garcia-spacing-10);
   }
 
+  @media (width >= 80rem) {
+    .categories-header {
+      text-align: left;
+    }
+  }
+
   .categories-overline {
     display: block;
     font-family: var(--garcia-font-family-sans);
     font-size: var(--garcia-font-size-xs);
     font-weight: var(--garcia-font-weight-semibold);
-    letter-spacing: var(--garcia-letter-spacing-wide);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--garcia-color-gold);
     margin-bottom: var(--garcia-spacing-3);
@@ -44,41 +52,72 @@
   }
 
   .categories-card {
+    position: relative;
     display: flex;
     align-items: flex-start;
     gap: var(--garcia-spacing-5);
     padding: var(--garcia-spacing-6);
-    background-color: var(--garcia-surface-primary);
-    border: 1px solid var(--garcia-border-light);
+    background:
+      linear-gradient(135deg, var(--garcia-surface-primary) 0%, var(--garcia-color-ivory) 100%);
     border-radius: var(--garcia-radius-lg);
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.04);
+    border: 1px solid var(--garcia-border-light);
+    overflow: hidden;
     transition:
       transform var(--garcia-duration-slow) var(--garcia-ease-out),
-      box-shadow var(--garcia-duration-slow) var(--garcia-ease-out),
-      border-color var(--garcia-duration-slow) var(--garcia-ease-out);
+      box-shadow var(--garcia-duration-slow) var(--garcia-ease-out);
+  }
+
+  .categories-card::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline: 2rem;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--garcia-color-gold) 30%,
+      var(--garcia-color-gold) 70%,
+      transparent
+    );
+    opacity: 0;
+    transition: opacity var(--garcia-duration-slow) var(--garcia-ease-out);
+    border-radius: 1px;
   }
 
   .categories-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
-    border-color: var(--garcia-color-primary-500);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgb(0 0 0 / 0.08);
+    border-color: transparent;
+  }
+
+  .categories-card:hover::before {
+    opacity: 1;
+  }
+
+  .categories-card:hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgb(201 168 76 / 0.2);
+    pointer-events: none;
   }
 
   .categories-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 50%;
-    background-color: var(--garcia-color-primary-50);
-    color: var(--garcia-color-primary-500);
+    width: 2.5rem;
+    height: 2.5rem;
+    color: var(--garcia-color-gold);
     flex-shrink: 0;
   }
 
   .categories-icon svg {
     width: 1.25rem;
     height: 1.25rem;
+    stroke-width: 1.2;
   }
 
   .categories-content {
@@ -88,8 +127,8 @@
 
   .categories-card-name {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-lg);
-    line-height: var(--garcia-line-height-lg);
+    font-size: var(--garcia-font-size-xl);
+    line-height: var(--garcia-line-height-xl);
     font-weight: var(--garcia-font-weight-semibold);
     color: var(--garcia-text-primary);
     letter-spacing: var(--garcia-letter-spacing-tight);
@@ -99,37 +138,42 @@
   .categories-card-desc {
     font-size: var(--garcia-font-size-sm);
     line-height: var(--garcia-line-height-sm);
-    color: var(--garcia-text-secondary);
+    color: var(--garcia-text-tertiary);
   }
 
   .categories-card-enter {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px) scale(0.97);
   }
 
   .categories-card-enter-active {
-    animation: categories-card-in 500ms var(--garcia-ease-out) forwards;
+    animation: categories-card-in 600ms var(--garcia-ease-out) forwards;
   }
 
   @keyframes categories-card-in {
     from {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(20px) scale(0.97);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .categories-card {
       transition: none;
+      background: var(--garcia-surface-primary);
+    }
+
+    .categories-card::before {
+      display: none;
     }
 
     .categories-card:hover {
       transform: none;
-      box-shadow: 0 2px 8px rgb(0 0 0 / 0.04);
+      box-shadow: none;
     }
 
     .categories-card-enter {
