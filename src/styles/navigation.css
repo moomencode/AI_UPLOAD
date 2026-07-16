@@ -85,14 +85,14 @@
   }
 
   .landing-logo img {
-    height: 2rem;
+    height: 2.25rem;
     width: auto;
     object-fit: contain;
   }
 
   @media (width >= 48rem) {
     .landing-logo img {
-      height: 2.25rem;
+      height: 2.5rem;
     }
   }
 
@@ -153,7 +153,7 @@
   }
 
   .landing-header-scrolled .landing-nav-link {
-    color: var(--garcia-text-secondary);
+    color: var(--garcia-text-primary);
   }
 
   .landing-header-scrolled .landing-nav-link:hover,

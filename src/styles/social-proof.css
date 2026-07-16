@@ -131,18 +131,18 @@
 
   .social-quote-text {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-lg);
+    font-size: var(--garcia-font-size-xl);
     line-height: 1.7;
     color: var(--garcia-text-primary);
     font-style: italic;
-    letter-spacing: var(--garcia-letter-spacing-tight);
+    letter-spacing: -0.01em;
     margin-bottom: var(--garcia-spacing-4);
   }
 
   @media (width >= 48rem) {
     .social-quote-text {
-      font-size: var(--garcia-font-size-xl);
-      line-height: 1.8;
+      font-size: 1.5rem;
+      line-height: 1.7;
     }
   }
 

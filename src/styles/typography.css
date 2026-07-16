@@ -8,13 +8,13 @@
 
   .display-1 {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-4xl);
-    line-height: var(--garcia-line-height-4xl);
+    font-size: var(--garcia-font-size-5xl);
+    line-height: 1.05;
     font-weight: var(--garcia-font-weight-bold);
-    letter-spacing: var(--garcia-letter-spacing-tight);
+    letter-spacing: -0.03em;
 
     @media (width >= 48rem) {
-      font-size: var(--garcia-font-size-5xl);
+      font-size: 5rem;
       line-height: 1;
     }
   }
@@ -36,26 +36,27 @@
 
   .heading-1 {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-2xl);
-    line-height: var(--garcia-line-height-2xl);
+    font-size: 1.75rem;
+    line-height: 1.2;
     font-weight: var(--garcia-font-weight-bold);
-    letter-spacing: var(--garcia-letter-spacing-tight);
+    letter-spacing: -0.02em;
 
     @media (width >= 48rem) {
-      font-size: var(--garcia-font-size-3xl);
-      line-height: var(--garcia-line-height-3xl);
+      font-size: var(--garcia-font-size-4xl);
+      line-height: var(--garcia-line-height-4xl);
     }
   }
 
   .heading-2 {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-xl);
-    line-height: var(--garcia-line-height-xl);
+    font-size: var(--garcia-font-size-2xl);
+    line-height: var(--garcia-line-height-2xl);
     font-weight: var(--garcia-font-weight-semibold);
+    letter-spacing: -0.01em;
 
     @media (width >= 48rem) {
-      font-size: var(--garcia-font-size-2xl);
-      line-height: var(--garcia-line-height-2xl);
+      font-size: var(--garcia-font-size-3xl);
+      line-height: var(--garcia-line-height-3xl);
     }
   }
 

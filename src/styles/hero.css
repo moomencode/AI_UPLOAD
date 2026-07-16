@@ -126,7 +126,7 @@
 
   .hero-name {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-5xl);
+    font-size: 2.75rem;
     line-height: 1.05;
     font-weight: var(--garcia-font-weight-bold);
     letter-spacing: -0.03em;
@@ -146,7 +146,7 @@
 
   @media (width >= 80rem) {
     .hero-name {
-      font-size: 6rem;
+      font-size: 6.5rem;
       max-width: 10ch;
     }
   }

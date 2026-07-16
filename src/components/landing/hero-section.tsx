@@ -78,7 +78,7 @@ export function HeroSection({
         <h1 className="hero-name">{name}</h1>
         <p className="hero-tagline">{tagline}</p>
 
-        <div className="hero-cta hidden md:block">
+        <div className="hero-cta">
           <Button variant="primary" size="lg">
             {ctaLabel}
           </Button>

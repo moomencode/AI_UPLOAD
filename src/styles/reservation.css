@@ -39,6 +39,14 @@
     box-shadow:
       0 4px 24px rgb(0 0 0 / 0.04),
       0 1px 4px rgb(0 0 0 / 0.02);
+    transition: box-shadow var(--garcia-duration-slow) var(--garcia-ease-out);
+  }
+
+  .reservation-form-card:focus-within {
+    box-shadow:
+      0 4px 24px rgb(201 168 76 / 0.08),
+      0 1px 4px rgb(0 0 0 / 0.02);
+    border-color: rgb(201 168 76 / 0.2);
   }
 
   @media (width >= 48rem) {

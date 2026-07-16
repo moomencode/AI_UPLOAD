@@ -26,6 +26,14 @@ const PremiumFooter = dynamic(() =>
   import("@/components/landing/premium-footer").then((m) => ({ default: m.PremiumFooter })),
 );
 
+function SectionDivider() {
+  return (
+    <div className="section-separator" aria-hidden="true">
+      <span className="section-separator-diamond" />
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -33,10 +41,15 @@ export default function Home() {
       <HeroSection />
       <main id="main-content">
         <AboutSection />
+        <SectionDivider />
         <Categories />
+        <SectionDivider />
         <FeaturedMenu />
+        <SectionDivider />
         <SocialProof />
+        <SectionDivider />
         <GallerySection />
+        <SectionDivider />
         <ReservationSection />
         <section id="contact" style={{ height: "100vh" }} />
       </main>

@@ -151,13 +151,13 @@
     display: flex;
     flex-direction: column;
     gap: var(--garcia-spacing-3);
-    padding: var(--garcia-spacing-6);
+    padding: var(--garcia-spacing-6) var(--garcia-spacing-6) var(--garcia-spacing-8);
     flex: 1;
   }
 
   @media (width >= 48rem) {
     .featured-card-body {
-      padding: var(--garcia-spacing-8) var(--garcia-spacing-6);
+      padding: var(--garcia-spacing-8) var(--garcia-spacing-8) var(--garcia-spacing-10);
     }
   }
 
@@ -214,8 +214,8 @@
 
   .featured-card-price {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-2xl);
-    line-height: var(--garcia-line-height-2xl);
+    font-size: var(--garcia-font-size-3xl);
+    line-height: var(--garcia-line-height-3xl);
     font-weight: var(--garcia-font-weight-bold);
     color: var(--garcia-color-gold-dark);
     letter-spacing: var(--garcia-letter-spacing-tight);

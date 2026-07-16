@@ -104,8 +104,8 @@
 
   .about-heading {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-3xl);
-    line-height: var(--garcia-line-height-3xl);
+    font-size: var(--garcia-font-size-4xl);
+    line-height: 1.1;
     font-weight: var(--garcia-font-weight-bold);
     color: var(--garcia-text-primary);
     letter-spacing: -0.02em;
@@ -113,21 +113,22 @@
 
   @media (width >= 48rem) {
     .about-heading {
-      font-size: var(--garcia-font-size-5xl);
+      font-size: 4rem;
       line-height: 1.05;
     }
   }
 
   .about-story {
     font-size: var(--garcia-font-size-base);
-    line-height: 1.9;
+    line-height: 2;
     color: var(--garcia-text-secondary);
+    max-width: 55ch;
   }
 
   @media (width >= 48rem) {
     .about-story {
       font-size: var(--garcia-font-size-lg);
-      line-height: 1.9;
+      line-height: 2;
     }
   }
 
@@ -200,21 +201,6 @@
   .about-cta {
     display: inline-flex;
     align-items: center;
-    gap: var(--garcia-spacing-2);
-    font-size: var(--garcia-font-size-sm);
-    font-weight: var(--garcia-font-weight-medium);
-    color: var(--garcia-color-primary-500);
-    text-decoration: none;
-    padding: var(--garcia-spacing-3) 0;
-    transition:
-      color var(--garcia-duration-fast) var(--garcia-ease-out),
-      gap var(--garcia-duration-fast) var(--garcia-ease-out);
-  }
-
-  .about-cta:hover,
-  .about-cta:focus-visible {
-    color: var(--garcia-color-primary-600);
-    gap: var(--garcia-spacing-3);
   }
 
   .about-cta .btn {
@@ -230,6 +216,7 @@
     letter-spacing: 0.03em;
     padding-inline: var(--garcia-spacing-10);
     height: 3.5rem;
+    margin-top: var(--garcia-spacing-6);
     box-shadow:
       0 4px 20px rgb(201 168 76 / 0.25),
       0 1px 3px rgb(0 0 0 / 0.08);

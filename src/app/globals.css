@@ -38,3 +38,28 @@
     color: var(--garcia-color-primary-900);
   }
 }
+
+.section-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--garcia-spacing-3);
+  padding-block: var(--garcia-spacing-3);
+  opacity: 0.25;
+}
+
+.section-separator::before,
+.section-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--garcia-color-gold) 50%, transparent);
+}
+
+.section-separator-diamond {
+  width: 6px;
+  height: 6px;
+  background-color: var(--garcia-color-gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}

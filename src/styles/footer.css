@@ -103,12 +103,29 @@
       color var(--garcia-duration-fast) var(--garcia-ease-out),
       padding-inline-start var(--garcia-duration-fast) var(--garcia-ease-out);
     display: inline-block;
+    position: relative;
+  }
+
+  .footer-links a::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    inset-block-end: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--garcia-color-gold);
+    transition: width var(--garcia-duration-slow) var(--garcia-ease-out);
+    opacity: 0.5;
   }
 
   .footer-links a:hover,
   .footer-links a:focus-visible {
     color: var(--garcia-color-gold);
     padding-inline-start: var(--garcia-spacing-1);
+  }
+
+  .footer-links a:hover::before {
+    width: 100%;
   }
 
   .footer-contact-item {
