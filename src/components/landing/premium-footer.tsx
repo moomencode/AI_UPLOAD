@@ -48,6 +48,14 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
 
 function XIcon({ size = 18 }: { size?: number }) {
   return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+function MapPinIcon({ size = 16 }: { size?: number }) {
+  return (
     <svg
       width={size}
       height={size}
@@ -58,7 +66,43 @@ function XIcon({ size = 18 }: { size?: number }) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M4 4l16 16M20 4L4 20" />
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function PhoneIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function MailIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <polyline points="22,6 12,13 2,6" />
     </svg>
   );
 }
@@ -139,7 +183,7 @@ export function PremiumFooter({
             <h3 className="footer-heading">Contact</h3>
             <div className="footer-contact-item">
               <span className="footer-contact-icon" aria-hidden="true">
-                <Icon name="info" size={14} />
+                <MapPinIcon />
               </span>
               <span>
                 123 Gourmet Street
@@ -149,7 +193,7 @@ export function PremiumFooter({
             </div>
             <div className="footer-contact-item">
               <span className="footer-contact-icon" aria-hidden="true">
-                <Icon name="info" size={14} />
+                <PhoneIcon />
               </span>
               <a href={`tel:+15551234567`} style={{ color: "inherit", textDecoration: "none" }}>
                 +1 (555) 123-4567
@@ -157,7 +201,7 @@ export function PremiumFooter({
             </div>
             <div className="footer-contact-item">
               <span className="footer-contact-icon" aria-hidden="true">
-                <Icon name="info" size={14} />
+                <MailIcon />
               </span>
               <a
                 href="mailto:hello@garcia.com"
