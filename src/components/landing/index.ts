@@ -1,0 +1,12 @@
+export { HeroSection } from "./hero-section";
+export type { HeroSectionProps } from "./hero-section";
+export { LandingHeader } from "./landing-header";
+export type { LandingHeaderProps, NavItem } from "./landing-header";
+export { FeaturedMenu } from "./featured-menu";
+export type { FeaturedMenuProps, FeaturedDish, DishBadge } from "./featured-menu";
+export { Categories } from "./categories";
+export type { CategoriesProps, CategoryItem } from "./categories";
+export { AboutSection } from "./about-section";
+export type { AboutSectionProps } from "./about-section";
+export { PremiumFooter } from "./premium-footer";
+export type { PremiumFooterProps } from "./premium-footer";

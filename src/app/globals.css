@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/typography.css";
+@import "../styles/layout.css";
+@import "../styles/button.css";
+@import "../styles/form.css";
+@import "../styles/modal.css";
+@import "../styles/feedback.css";
+@import "../styles/hero.css";
+@import "../styles/navigation.css";
+@import "../styles/featured-menu.css";
+@import "../styles/categories.css";
+@import "../styles/about.css";
+@import "../styles/footer.css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--garcia-border-focus);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--garcia-color-primary-200);
+    color: var(--garcia-color-primary-900);
+  }
+}
