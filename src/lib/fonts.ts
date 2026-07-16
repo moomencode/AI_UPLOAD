@@ -39,5 +39,5 @@ export const notoNaskhArabic = Noto_Naskh_Arabic({
   display: "swap",
   fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
   adjustFontFallback: true,
-  preload: true,
+  preload: false,
 });

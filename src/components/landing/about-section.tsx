@@ -75,11 +75,11 @@ export function AboutSection({
             className={`about-image-wrapper ${hasEntered ? "about-image-clip-active" : "about-image-clip"}`}
           >
             <Image
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=85&fit=crop&auto=format"
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85&fit=crop&auto=format"
               alt="Warm, candlelit restaurant interior with rich wood tones and ambient glow"
               fill
               sizes="(max-width: 48rem) 100vw, 50vw"
-              priority
+              loading="lazy"
               style={{ objectFit: "cover" }}
             />
           </div>

@@ -27,7 +27,7 @@ export function ImagePreview({ isOpen, onClose, src, alt, caption }: ImagePrevie
         </button>
         <div className="image-preview-container">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={src} alt={alt} className="image-preview-img" />
+          <img src={src} alt={alt} className="image-preview-img" loading="lazy" decoding="async" />
           {caption !== undefined && <p className="image-preview-caption">{caption}</p>}
         </div>
       </ModalContent>
