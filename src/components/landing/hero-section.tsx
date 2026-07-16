@@ -41,8 +41,11 @@ export function HeroSection({
       <div className="hero-overlay-base" aria-hidden="true" />
       <div className="hero-overlay-radial" aria-hidden="true" />
       <div className="hero-overlay-vignette" aria-hidden="true" />
+      <div className="hero-overlay-sweep" aria-hidden="true" />
 
       <div className="hero-content">
+        <span className="hero-overline">Mediterranean Dining</span>
+        <span className="hero-bar" aria-hidden="true" />
         <h1 className="hero-name">{name}</h1>
         <p className="hero-tagline">{tagline}</p>
 
@@ -54,14 +57,7 @@ export function HeroSection({
       </div>
 
       <div className="hero-scroll" aria-hidden="true">
-        <svg className="hero-scroll-icon" viewBox="0 0 20 20" fill="currentColor">
-          <path
-            fillRule="evenodd"
-            d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0L5.21 8.27a.75.75 0 0 1 .02-1.06z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <span className="hero-scroll-label">Scroll</span>
+        <span className="hero-scroll-line" />
       </div>
     </section>
   );

@@ -1,10 +1,4 @@
 @layer components {
-  /* ═══════════════════════════════════════════════════════════════════════
-     HERO SECTION
-     Cinematic full-viewport hero with Ken Burns effect, multi-layer overlay.
-     ═══════════════════════════════════════════════════════════════════════ */
-
-  /* ─── Hero Wrapper ───────────────────────────────────────────── */
   .hero {
     position: relative;
     height: 100vh;
@@ -12,12 +6,10 @@
     min-height: 600px;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
     overflow: hidden;
     color: #fff;
   }
 
-  /* ─── Ken Burns Background ────────────────────────────────────── */
   .hero-background {
     position: absolute;
     inset: 0;
@@ -31,7 +23,6 @@
     height: 100%;
     object-fit: cover;
     animation: hero-ken-burns 22s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
-    will-change: transform;
   }
 
   @keyframes hero-ken-burns {
@@ -43,7 +34,6 @@
     }
   }
 
-  /* ─── Fallback gradient (only when image fails) ───────────────── */
   .hero-background-fallback {
     position: absolute;
     inset: 0;
@@ -56,103 +46,141 @@
     );
   }
 
-  /* ══════════════════════════════════════════════════════════════
-     MULTI-LAYER OVERLAY
-     ══════════════════════════════════════════════════════════════ */
-
-  /* Layer 1: Dark cinematic base */
   .hero-overlay-base {
     position: absolute;
     inset: 0;
     z-index: 1;
     background: linear-gradient(
       to top,
-      rgb(0 0 0 / 0.75) 0%,
-      rgb(0 0 0 / 0.4) 30%,
-      rgb(0 0 0 / 0.15) 60%,
+      rgb(0 0 0 / 0.8) 0%,
+      rgb(0 0 0 / 0.45) 30%,
+      rgb(0 0 0 / 0.15) 55%,
       rgb(0 0 0 / 0) 100%
     );
   }
 
-  /* Layer 2: Radial light behind headline (warm gold glow) */
   .hero-overlay-radial {
     position: absolute;
     inset: 0;
     z-index: 1;
     background: radial-gradient(
-      ellipse 80% 50% at 50% 65%,
-      rgb(201 168 76 / 0.12) 0%,
+      ellipse 70% 60% at 35% 60%,
+      rgb(201 168 76 / 0.15) 0%,
       transparent 70%
     );
     pointer-events: none;
   }
 
-  /* Layer 3: Soft vignette around edges */
   .hero-overlay-vignette {
     position: absolute;
     inset: 0;
     z-index: 1;
     background: radial-gradient(
       ellipse 60% 55% at 50% 50%,
-      transparent 40%,
-      rgb(0 0 0 / 0.35) 100%
+      transparent 35%,
+      rgb(0 0 0 / 0.4) 100%
     );
     pointer-events: none;
   }
 
-  /* ─── Content ────────────────────────────────────────────────── */
+  .hero-overlay-sweep {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgb(201 168 76 / 0.04) 50%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
   .hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
     text-align: center;
     padding-bottom: var(--garcia-spacing-16);
+    padding-inline: var(--garcia-spacing-6);
   }
 
   @media (width >= 48rem) {
     .hero-content {
       padding-bottom: var(--garcia-spacing-24);
+      padding-inline: var(--garcia-spacing-8);
     }
   }
 
-  /* ─── Name (Restaurant) — Premium Typography ──────────────────── */
+  @media (width >= 80rem) {
+    .hero-content {
+      text-align: left;
+      padding-inline-start: 8%;
+    }
+  }
+
+  .hero-overline {
+    display: block;
+    font-family: var(--garcia-font-family-sans);
+    font-size: var(--garcia-font-size-xs);
+    font-weight: var(--garcia-font-weight-semibold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgb(255 255 255 / 0.55);
+    margin-bottom: var(--garcia-spacing-5);
+  }
+
+  .hero-bar {
+    display: block;
+    width: 2.5rem;
+    height: 2px;
+    background-color: var(--garcia-color-gold);
+    border-radius: 1px;
+    margin-inline: auto;
+    margin-bottom: var(--garcia-spacing-6);
+  }
+
+  @media (width >= 80rem) {
+    .hero-bar {
+      margin-inline: 0;
+    }
+  }
+
   .hero-name {
     font-family: var(--garcia-font-family-display);
-    font-size: var(--garcia-font-size-4xl);
-    line-height: 1.1;
+    font-size: var(--garcia-font-size-5xl);
+    line-height: 1.05;
     font-weight: var(--garcia-font-weight-bold);
-    letter-spacing: var(--garcia-letter-spacing-tight);
+    letter-spacing: -0.03em;
     text-wrap: balance;
     margin-bottom: var(--garcia-spacing-4);
-    text-shadow: 0 2px 20px rgb(0 0 0 / 0.3);
+    text-shadow: 0 2px 30px rgb(0 0 0 / 0.3);
   }
 
   @media (width >= 48rem) {
     .hero-name {
-      font-size: var(--garcia-font-size-5xl);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: 5rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
       margin-bottom: var(--garcia-spacing-5);
     }
   }
 
   @media (width >= 80rem) {
     .hero-name {
-      font-size: 4.5rem;
-      line-height: 1;
-      letter-spacing: -0.02em;
+      font-size: 5.5rem;
+      max-width: 12ch;
     }
   }
 
-  /* ─── Tagline — Premium ───────────────────────────────────────── */
   .hero-tagline {
     font-size: var(--garcia-font-size-lg);
     line-height: 1.6;
     font-weight: var(--garcia-font-weight-normal);
-    color: rgb(255 255 255 / 0.8);
+    color: rgb(255 255 255 / 0.7);
     max-width: 42ch;
     margin-inline: auto;
-    margin-bottom: var(--garcia-spacing-8);
+    margin-bottom: var(--garcia-spacing-10);
     text-shadow: 0 1px 12px rgb(0 0 0 / 0.25);
   }
 
@@ -160,13 +188,15 @@
     .hero-tagline {
       font-size: var(--garcia-font-size-xl);
       line-height: 1.7;
-      margin-bottom: var(--garcia-spacing-10);
+      margin-bottom: var(--garcia-spacing-12);
     }
   }
 
-  /* ══════════════════════════════════════════════════════════════
-     CTA — Premium Button
-     ══════════════════════════════════════════════════════════════ */
+  @media (width >= 80rem) {
+    .hero-tagline {
+      margin-inline: 0;
+    }
+  }
 
   .hero-cta {
     display: inline-block;
@@ -249,63 +279,40 @@
     }
   }
 
-  /* ══════════════════════════════════════════════════════════════
-     SCROLL INDICATOR — Elegant Subtle
-     ══════════════════════════════════════════════════════════════ */
-
   .hero-scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--garcia-spacing-2);
     position: absolute;
     inset-inline-start: 50%;
     bottom: var(--garcia-spacing-10);
     z-index: 2;
     transform: translateX(-50%);
-    color: #fff;
-    opacity: 0.35;
-    animation: hero-scroll-float 3s var(--garcia-ease-in-out) infinite;
-    will-change: transform;
   }
 
-  @keyframes hero-scroll-float {
+  @media (width >= 80rem) {
+    .hero-scroll {
+      inset-inline-start: 8%;
+      transform: none;
+    }
+  }
+
+  .hero-scroll-line {
+    display: block;
+    width: 1px;
+    height: 2.5rem;
+    background: linear-gradient(to bottom, rgb(255 255 255 / 0.5), transparent);
+    animation: hero-scroll-pulse 2.5s var(--garcia-ease-in-out) infinite;
+  }
+
+  @keyframes hero-scroll-pulse {
     0%,
     100% {
-      transform: translateX(-50%) translateY(0);
-      opacity: 0.35;
+      opacity: 1;
+      transform: scaleY(1);
+      transform-origin: top;
     }
     50% {
-      transform: translateX(-50%) translateY(6px);
-      opacity: 0.55;
-    }
-  }
-
-  .hero-scroll-icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .hero-scroll-label {
-    font-size: var(--garcia-font-size-xs);
-    line-height: 1;
-    font-weight: var(--garcia-font-weight-medium);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  /* ══════════════════════════════════════════════════════════════
-     ANIMATIONS
-     ══════════════════════════════════════════════════════════════ */
-
-  @keyframes hero-fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+      opacity: 0.3;
+      transform: scaleY(0.6);
+      transform-origin: top;
     }
   }
 
@@ -318,14 +325,42 @@
     animation: hero-fade-in 800ms var(--garcia-ease-out) 200ms both;
   }
 
-  .hero-cta {
+  .hero-overline {
     opacity: 0;
-    animation: hero-fade-in 800ms var(--garcia-ease-out) 400ms both;
+    animation: hero-fade-in 800ms var(--garcia-ease-out) both;
   }
 
-  /* ══════════════════════════════════════════════════════════════
-     REDUCED MOTION
-     ══════════════════════════════════════════════════════════════ */
+  .hero-bar {
+    opacity: 0;
+    animation: hero-bar-in 600ms var(--garcia-ease-out) 300ms forwards;
+  }
+
+  .hero-cta {
+    opacity: 0;
+    animation: hero-fade-in 800ms var(--garcia-ease-out) 500ms both;
+  }
+
+  @keyframes hero-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-bar-in {
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
 
   @media (prefers-reduced-motion: reduce) {
     .hero-background img,
@@ -335,15 +370,21 @@
 
     .hero-name,
     .hero-tagline,
+    .hero-overline,
+    .hero-bar,
     .hero-cta {
       animation: none;
       opacity: 1;
       transform: none;
     }
 
-    .hero-scroll {
+    .hero-bar {
+      transform: scaleX(1);
+    }
+
+    .hero-scroll-line {
       animation: none;
-      opacity: 0.35;
+      opacity: 1;
     }
   }
 }
