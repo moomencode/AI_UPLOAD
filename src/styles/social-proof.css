@@ -1,0 +1,180 @@
+@layer components {
+  .social {
+    background-color: var(--garcia-surface-primary);
+  }
+
+  .social-header {
+    text-align: center;
+    margin-bottom: var(--garcia-spacing-10);
+  }
+
+  @media (width >= 48rem) {
+    .social-header {
+      margin-bottom: var(--garcia-spacing-12);
+    }
+  }
+
+  .social-overline {
+    display: block;
+    font-family: var(--garcia-font-family-sans);
+    font-size: var(--garcia-font-size-xs);
+    font-weight: var(--garcia-font-weight-semibold);
+    letter-spacing: var(--garcia-letter-spacing-wide);
+    text-transform: uppercase;
+    color: var(--garcia-color-gold);
+    margin-bottom: var(--garcia-spacing-3);
+  }
+
+  .social-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--garcia-spacing-10);
+  }
+
+  @media (width >= 48rem) {
+    .social-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--garcia-spacing-12);
+    }
+  }
+
+  .social-rating {
+    display: flex;
+    flex-direction: column;
+    gap: var(--garcia-spacing-6);
+  }
+
+  .social-stars-row {
+    display: flex;
+    align-items: center;
+    gap: var(--garcia-spacing-3);
+  }
+
+  .social-stars {
+    display: flex;
+    gap: 2px;
+    color: var(--garcia-color-gold);
+  }
+
+  .social-stars svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .social-score {
+    font-size: var(--garcia-font-size-3xl);
+    font-weight: var(--garcia-font-weight-bold);
+    color: var(--garcia-text-primary);
+    line-height: 1;
+    letter-spacing: var(--garcia-letter-spacing-tight);
+  }
+
+  @media (width >= 48rem) {
+    .social-score {
+      font-size: var(--garcia-font-size-4xl);
+    }
+  }
+
+  .social-review-count {
+    font-size: var(--garcia-font-size-sm);
+    color: var(--garcia-text-tertiary);
+  }
+
+  .social-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--garcia-spacing-8);
+  }
+
+  .social-quote {
+    position: relative;
+    padding-inline-start: var(--garcia-spacing-6);
+    border-inline-start: 2px solid var(--garcia-color-gold);
+  }
+
+  .social-quote-text {
+    font-family: var(--garcia-font-family-display);
+    font-size: var(--garcia-font-size-lg);
+    line-height: var(--garcia-line-height-lg);
+    color: var(--garcia-text-primary);
+    font-style: italic;
+    letter-spacing: var(--garcia-letter-spacing-tight);
+    margin-bottom: var(--garcia-spacing-3);
+  }
+
+  @media (width >= 48rem) {
+    .social-quote-text {
+      font-size: var(--garcia-font-size-xl);
+      line-height: var(--garcia-line-height-xl);
+    }
+  }
+
+  .social-quote-author {
+    font-size: var(--garcia-font-size-sm);
+    color: var(--garcia-text-secondary);
+  }
+
+  .social-quote-author strong {
+    color: var(--garcia-text-primary);
+    font-weight: var(--garcia-font-weight-semibold);
+  }
+
+  .social-press {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--garcia-spacing-6);
+    padding-block-start: var(--garcia-spacing-8);
+    border-block-start: 1px solid var(--garcia-border-light);
+    margin-block-start: var(--garcia-spacing-6);
+  }
+
+  .social-press-label {
+    font-size: var(--garcia-font-size-xs);
+    font-weight: var(--garcia-font-weight-semibold);
+    letter-spacing: var(--garcia-letter-spacing-wide);
+    text-transform: uppercase;
+    color: var(--garcia-text-tertiary);
+  }
+
+  .social-press-item {
+    font-family: var(--garcia-font-family-display);
+    font-size: var(--garcia-font-size-sm);
+    color: var(--garcia-text-secondary);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  .social-enter {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .social-enter-active {
+    animation: social-in 500ms var(--garcia-ease-out) forwards;
+  }
+
+  @keyframes social-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-enter {
+      opacity: 1;
+      transform: none;
+    }
+
+    .social-enter-active {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

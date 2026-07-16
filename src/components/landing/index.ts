@@ -10,3 +10,5 @@ export { AboutSection } from "./about-section";
 export type { AboutSectionProps } from "./about-section";
 export { PremiumFooter } from "./premium-footer";
 export type { PremiumFooterProps } from "./premium-footer";
+export { SocialProof } from "./social-proof";
+export type { SocialProofProps, ReviewQuote } from "./social-proof";
