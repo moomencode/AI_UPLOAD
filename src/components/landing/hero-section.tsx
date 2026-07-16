@@ -10,8 +10,7 @@ export interface HeroSectionProps {
   className?: string;
 }
 
-const defaultImage =
-  "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1920&q=85&fit=crop";
+const defaultImage = "/images/hero-bg.png";
 
 export function HeroSection({
   backgroundImage = defaultImage,
