@@ -89,7 +89,7 @@ export function SocialProof({
 
         <div className="social-grid">
           <div className={`social-rating ${hasEntered ? "social-enter-active" : "social-enter"}`}>
-            <div>
+            <div className="social-rating-badge">
               <div className="social-stars-row">
                 <span className="social-score" aria-hidden="true">
                   {rating}
@@ -107,11 +107,13 @@ export function SocialProof({
 
             <div className="social-press">
               <span className="social-press-label">As Featured In</span>
-              {pressItems.map((item) => (
-                <span key={item} className="social-press-item">
-                  {item}
-                </span>
-              ))}
+              <div className="social-press-items">
+                {pressItems.map((item) => (
+                  <span key={item} className="social-press-item">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
 
