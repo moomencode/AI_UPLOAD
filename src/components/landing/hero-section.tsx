@@ -55,9 +55,11 @@ export function HeroSection({
           fill
           priority
           sizes="100vw"
-          style={{ objectFit: "cover" }}
+          style={{ objectFit: "cover", objectPosition: "center 35%" }}
         />
       </div>
+
+      <div className="hero-background-fallback" aria-hidden="true" />
 
       <div className="hero-overlay-dark" aria-hidden="true" />
       <div className="hero-overlay-warm" aria-hidden="true" />
