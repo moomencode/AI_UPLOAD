@@ -74,19 +74,21 @@ export function PremiumFooter({
       <div className="content-wrapper">
         <div className="footer-grid">
           <div className="footer-brand">
-            <Image
-              src="/images/logo.png"
-              alt="Garcia Restaurant & Cafe"
-              width={120}
-              height={40}
-              priority
-              style={{
-                height: "2rem",
-                width: "auto",
-                objectFit: "contain",
-                marginBottom: "var(--garcia-spacing-4)",
-              }}
-            />
+            <span className="footer-brand-logo">
+              <Image
+                src="/images/logo.png"
+                alt="Garcia Restaurant & Cafe"
+                width={120}
+                height={40}
+                priority
+                style={{
+                  height: "2rem",
+                  width: "auto",
+                  objectFit: "contain",
+                }}
+              />
+            </span>
+            <span className="footer-brand-line" aria-hidden="true" />
             <p className="footer-desc">
               An intimate dining experience where Mediterranean tradition meets modern elegance.
               Every dish is crafted with passion, using the finest seasonal ingredients.
