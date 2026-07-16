@@ -117,7 +117,7 @@ export function FeaturedMenu({
           observer.disconnect();
         }
       },
-      { threshold: 0.15 },
+      { threshold: 0.1 },
     );
 
     observer.observe(el);

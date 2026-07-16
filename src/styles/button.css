@@ -17,7 +17,12 @@
       background-color var(--garcia-duration-fast) var(--garcia-ease-out),
       border-color var(--garcia-duration-fast) var(--garcia-ease-out),
       color var(--garcia-duration-fast) var(--garcia-ease-out),
-      opacity var(--garcia-duration-fast) var(--garcia-ease-out);
+      opacity var(--garcia-duration-fast) var(--garcia-ease-out),
+      transform var(--garcia-duration-fast) var(--garcia-ease-out);
+  }
+
+  .btn:active:not(:disabled) {
+    transform: scale(0.97);
   }
 
   .btn:focus-visible {

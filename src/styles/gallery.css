@@ -110,7 +110,7 @@
 
   .gallery-item-enter {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(24px);
   }
 
   .gallery-item-enter-active {
@@ -120,7 +120,7 @@
   @keyframes gallery-item-in {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(24px);
     }
     to {
       opacity: 1;

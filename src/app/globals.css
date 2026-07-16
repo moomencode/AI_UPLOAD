@@ -19,6 +19,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--garcia-spacing-16);
   }
 
   @media (prefers-reduced-motion: reduce) {

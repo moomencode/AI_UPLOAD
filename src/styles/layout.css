@@ -238,7 +238,7 @@
   color: var(--garcia-text-primary);
   outline: 2px solid var(--garcia-border-focus);
   outline-offset: 2px;
-  transition: top 0.2s;
+  transition: top var(--garcia-duration-fast) var(--garcia-ease-out);
 }
 
 .skip-link:focus {

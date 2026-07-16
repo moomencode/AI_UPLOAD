@@ -142,7 +142,7 @@
 
   .categories-card-enter {
     opacity: 0;
-    transform: translateY(20px) scale(0.97);
+    transform: translateY(24px) scale(0.97);
   }
 
   .categories-card-enter-active {
@@ -152,7 +152,7 @@
   @keyframes categories-card-in {
     from {
       opacity: 0;
-      transform: translateY(20px) scale(0.97);
+      transform: translateY(24px) scale(0.97);
     }
     to {
       opacity: 1;

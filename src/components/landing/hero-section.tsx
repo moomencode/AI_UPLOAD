@@ -30,11 +30,19 @@ export function HeroSection({
       return;
     }
 
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const heroHeight = el.parentElement?.offsetHeight ?? window.innerHeight;
-      if (scrollY <= heroHeight) {
-        el.style.transform = `translateY(${scrollY * 0.15}px)`;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const heroHeight = el.parentElement?.offsetHeight ?? window.innerHeight;
+          if (scrollY <= heroHeight) {
+            el.style.transform = `translateY(${scrollY * 0.15}px)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
