@@ -36,12 +36,9 @@ export function HeroSection({
         />
       </div>
 
-      <div className="hero-background-fallback" aria-hidden="true" />
-
-      <div className="hero-overlay-base" aria-hidden="true" />
-      <div className="hero-overlay-radial" aria-hidden="true" />
+      <div className="hero-overlay-dark" aria-hidden="true" />
+      <div className="hero-overlay-warm" aria-hidden="true" />
       <div className="hero-overlay-vignette" aria-hidden="true" />
-      <div className="hero-overlay-sweep" aria-hidden="true" />
 
       <div className="hero-content">
         <span className="hero-overline">Mediterranean Dining</span>

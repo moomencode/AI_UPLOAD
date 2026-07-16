@@ -22,51 +22,23 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: hero-ken-burns 22s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
   }
 
-  @keyframes hero-ken-burns {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.08);
-    }
-  }
-
-  .hero-background-fallback {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: linear-gradient(
-      135deg,
-      var(--garcia-color-forest) 0%,
-      var(--garcia-color-primary-900) 50%,
-      var(--garcia-color-charcoal) 100%
-    );
-  }
-
-  .hero-overlay-base {
+  .hero-overlay-dark {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(
-      to top,
-      rgb(0 0 0 / 0.8) 0%,
-      rgb(0 0 0 / 0.45) 30%,
-      rgb(0 0 0 / 0.15) 55%,
-      rgb(0 0 0 / 0) 100%
-    );
+    background: rgb(0 0 0 / 0.5);
   }
 
-  .hero-overlay-radial {
+  .hero-overlay-warm {
     position: absolute;
     inset: 0;
     z-index: 1;
     background: radial-gradient(
-      ellipse 70% 60% at 35% 60%,
-      rgb(201 168 76 / 0.15) 0%,
-      transparent 70%
+      ellipse 60% 50% at 30% 65%,
+      rgb(201 168 76 / 0.18) 0%,
+      transparent 65%
     );
     pointer-events: none;
   }
@@ -75,20 +47,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: radial-gradient(ellipse 60% 55% at 50% 50%, transparent 35%, rgb(0 0 0 / 0.4) 100%);
-    pointer-events: none;
-  }
-
-  .hero-overlay-sweep {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(
-      105deg,
-      transparent 30%,
-      rgb(201 168 76 / 0.04) 50%,
-      transparent 70%
-    );
+    background: radial-gradient(ellipse 55% 50% at 50% 50%, transparent 30%, rgb(0 0 0 / 0.3) 100%);
     pointer-events: none;
   }
 
@@ -200,11 +159,11 @@
 
   .hero-cta .btn {
     position: relative;
-    padding-inline: var(--garcia-spacing-8);
-    height: 3.25rem;
+    padding-inline: var(--garcia-spacing-10);
+    height: 3.5rem;
     font-size: var(--garcia-font-size-base);
-    font-weight: var(--garcia-font-weight-medium);
-    letter-spacing: var(--garcia-letter-spacing-wide);
+    font-weight: var(--garcia-font-weight-semibold);
+    letter-spacing: 0.06em;
     border: none;
     border-radius: var(--garcia-radius-lg);
     background: linear-gradient(
@@ -214,7 +173,7 @@
     );
     color: var(--garcia-color-charcoal);
     box-shadow:
-      0 4px 20px rgb(201 168 76 / 0.35),
+      0 4px 24px rgb(201 168 76 / 0.35),
       0 1px 3px rgb(0 0 0 / 0.15);
     transition:
       transform var(--garcia-duration-slow) var(--garcia-ease-out),
@@ -238,10 +197,10 @@
   }
 
   .hero-cta .btn:hover:not(:disabled) {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow:
-      0 8px 30px rgb(201 168 76 / 0.45),
-      0 2px 6px rgb(0 0 0 / 0.2);
+      0 8px 32px rgb(201 168 76 / 0.55),
+      0 2px 8px rgb(201 168 76 / 0.25);
     background: linear-gradient(
       135deg,
       var(--garcia-color-gold-light) 0%,
@@ -252,7 +211,7 @@
   .hero-cta .btn:active:not(:disabled) {
     transform: translateY(0);
     box-shadow:
-      0 2px 10px rgb(201 168 76 / 0.3),
+      0 2px 12px rgb(201 168 76 / 0.3),
       0 1px 2px rgb(0 0 0 / 0.15);
   }
 
