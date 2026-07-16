@@ -2,6 +2,7 @@ import {
   AboutSection,
   Categories,
   FeaturedMenu,
+  GallerySection,
   HeroSection,
   LandingHeader,
   PremiumFooter,
@@ -18,6 +19,7 @@ export default function Home() {
         <Categories />
         <FeaturedMenu />
         <SocialProof />
+        <GallerySection />
         <section id="reservations" style={{ height: "100vh" }} />
         <section id="contact" style={{ height: "100vh" }} />
       </main>

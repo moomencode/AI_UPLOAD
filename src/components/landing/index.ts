@@ -12,3 +12,5 @@ export { PremiumFooter } from "./premium-footer";
 export type { PremiumFooterProps } from "./premium-footer";
 export { SocialProof } from "./social-proof";
 export type { SocialProofProps, ReviewQuote } from "./social-proof";
+export { GallerySection } from "./gallery-section";
+export type { GallerySectionProps, GalleryItem } from "./gallery-section";
