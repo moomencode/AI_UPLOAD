@@ -26,11 +26,15 @@ const defaultFeatures = [
     title: "Intimate Atmosphere",
     description: "A warm, inviting space designed for memorable moments.",
   },
+  {
+    title: "Curated Wine Cellar",
+    description: "An exclusive selection of old-world and new-world vintages.",
+  },
 ];
 
 export function AboutSection({
-  headline = "About Garcia",
-  story = "Garcia Restaurant & Cafe brings together the rich culinary traditions of the Mediterranean with modern techniques. Every dish tells a story of passion, heritage, and meticulous craftsmanship — from our hand-rolled pasta to our wood-fired specialties.",
+  headline = "A Legacy of Flavor",
+  story = "Garcia Restaurant & Cafe began as a family dream — a place where Mediterranean heritage meets contemporary elegance. Every dish reflects generations of tradition refined through modern technique, from our hand-rolled pasta to our wood-fired specialties.",
   features = defaultFeatures,
   whatsappNumber = "+15551234567",
   className = "",
@@ -71,8 +75,8 @@ export function AboutSection({
             className={`about-image-wrapper ${hasEntered ? "about-image-clip-active" : "about-image-clip"}`}
           >
             <Image
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=85&fit=crop&auto=format"
-              alt="Elegant restaurant interior with warm ambient lighting and natural wood accents"
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=85&fit=crop&auto=format"
+              alt="Warm, candlelit restaurant interior with rich wood tones and ambient glow"
               fill
               sizes="(max-width: 48rem) 100vw, 50vw"
               priority
@@ -84,7 +88,6 @@ export function AboutSection({
             className={`about-content ${hasEntered ? "about-enter-active" : "about-enter"}`}
             style={{ animationDelay: hasEntered ? "150ms" : "0ms" }}
           >
-            <span className="about-overline">Our Story</span>
             <h2 id="about-heading" className="about-heading">
               {headline}
             </h2>
