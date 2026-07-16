@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 import { Button } from "@/components/button";
 
@@ -19,13 +22,33 @@ export function HeroSection({
   ctaLabel = "Reserve a Table",
   className = "",
 }: HeroSectionProps) {
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = bgRef.current;
+    if (el === null) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const heroHeight = el.parentElement?.offsetHeight ?? window.innerHeight;
+      if (scrollY <= heroHeight) {
+        el.style.transform = `translateY(${scrollY * 0.15}px)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className={`hero ${className}`} aria-label={`Hero: ${name}`}>
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
 
-      <div className="hero-background">
+      <div className="hero-background" ref={bgRef}>
         <Image
           src={backgroundImage}
           alt=""

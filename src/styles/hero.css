@@ -15,6 +15,7 @@
     inset: 0;
     z-index: 0;
     overflow: hidden;
+    will-change: transform;
   }
 
   .hero-background img,
@@ -22,6 +23,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .hero-background-fallback {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+      135deg,
+      var(--garcia-color-forest) 0%,
+      var(--garcia-color-primary-900) 50%,
+      var(--garcia-color-charcoal) 100%
+    );
   }
 
   .hero-overlay-dark {
@@ -79,9 +92,9 @@
     font-family: var(--garcia-font-family-sans);
     font-size: var(--garcia-font-size-xs);
     font-weight: var(--garcia-font-weight-semibold);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgb(255 255 255 / 0.55);
+    color: rgb(255 255 255 / 0.5);
     margin-bottom: var(--garcia-spacing-5);
   }
 
@@ -108,7 +121,7 @@
     font-weight: var(--garcia-font-weight-bold);
     letter-spacing: -0.03em;
     text-wrap: balance;
-    margin-bottom: var(--garcia-spacing-4);
+    margin-bottom: var(--garcia-spacing-5);
     text-shadow: 0 2px 30px rgb(0 0 0 / 0.3);
   }
 
@@ -117,7 +130,7 @@
       font-size: 5rem;
       line-height: 1;
       letter-spacing: -0.04em;
-      margin-bottom: var(--garcia-spacing-5);
+      margin-bottom: var(--garcia-spacing-6);
     }
   }
 
@@ -130,7 +143,7 @@
 
   .hero-tagline {
     font-size: var(--garcia-font-size-lg);
-    line-height: 1.6;
+    line-height: 1.7;
     font-weight: var(--garcia-font-weight-normal);
     color: rgb(255 255 255 / 0.7);
     max-width: 42ch;
@@ -142,7 +155,7 @@
   @media (width >= 48rem) {
     .hero-tagline {
       font-size: var(--garcia-font-size-xl);
-      line-height: 1.7;
+      line-height: 1.8;
       margin-bottom: var(--garcia-spacing-12);
     }
   }
