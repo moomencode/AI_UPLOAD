@@ -31,7 +31,7 @@ const defaultDishes: FeaturedDish[] = [
   {
     id: "grilled-octopus",
     image:
-      "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&q=85&fit=crop&auto=format",
     imageAlt: "Grilled octopus with lemon dressing and fresh herbs on a wooden board",
     name: "Grilled Octopus",
     description: "Tender charred octopus with lemon dressing, kalamata olives, and garden herbs.",
@@ -41,7 +41,7 @@ const defaultDishes: FeaturedDish[] = [
   {
     id: "truffle-risotto",
     image:
-      "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=600&q=80&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=800&q=85&fit=crop&auto=format",
     imageAlt: "Creamy risotto with wild mushrooms and grated parmesan",
     name: "Truffle Risotto",
     description: "Creamy arborio rice with wild mushrooms, aged parmesan, and black truffle oil.",
@@ -51,7 +51,7 @@ const defaultDishes: FeaturedDish[] = [
   {
     id: "lamb-chops",
     image:
-      "https://images.unsplash.com/photo-1514516345957-556ca7d90a29?w=600&q=80&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1514516345957-556ca7d90a29?w=800&q=85&fit=crop&auto=format",
     imageAlt: "Herb-crusted lamb chops with roasted vegetables",
     name: "Herb-Crusted Lamb Chops",
     description:
@@ -62,7 +62,7 @@ const defaultDishes: FeaturedDish[] = [
   {
     id: "burrata-salad",
     image:
-      "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=600&q=80&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=800&q=85&fit=crop&auto=format",
     imageAlt: "Burrata cheese with heirloom tomatoes and fresh basil",
     name: "Burrata & Heirloom Salad",
     description: "Creamy burrata with vine-ripened heirloom tomatoes, basil, and aged balsamic.",
@@ -132,7 +132,6 @@ export function FeaturedMenu({
     >
       <div className="content-wrapper">
         <header className="featured-header">
-          <span className="featured-overline">From Our Kitchen</span>
           <h2 id="featured-heading" className="heading-1">
             {title}
           </h2>
@@ -191,9 +190,10 @@ export function FeaturedMenu({
                     </div>
                   ) : null}
 
-                  <span className="featured-card-price">{dish.price}</span>
-
-                  <hr className="featured-card-divider" />
+                  <span className="featured-card-price">
+                    <sup className="featured-card-price-symbol">$</sup>
+                    {dish.price}
+                  </span>
 
                   <a
                     href={`https://wa.me/${waNumber}?text=${waMessage}`}
