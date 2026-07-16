@@ -68,7 +68,7 @@ export function AboutSection({
       <div className="content-wrapper">
         <div className="about-grid">
           <div
-            className={`about-image-wrapper ${hasEntered ? "about-enter-active" : "about-enter"}`}
+            className={`about-image-wrapper ${hasEntered ? "about-image-clip-active" : "about-image-clip"}`}
           >
             <Image
               src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=85&fit=crop&auto=format"
@@ -103,6 +103,8 @@ export function AboutSection({
                 </li>
               ))}
             </ul>
+
+            <hr className="about-divider" />
 
             <div className="about-cta">
               <a
