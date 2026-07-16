@@ -1,12 +1,8 @@
 @layer components {
-  /* ═══════════════════════════════════════════════════════════════════════
-     FEATURED MENU
-     Premium editorial dish grid with card anatomy.
-     ═══════════════════════════════════════════════════════════════════════ */
-
-  /* ─── Section ──────────────────────────────────────────────────── */
   .featured {
     background-color: var(--garcia-color-ivory);
+    background-image:
+      radial-gradient(ellipse 40% 50% at 100% 50%, rgb(201 168 76 / 0.03) 0%, transparent 100%);
   }
 
   .featured-header {
@@ -19,7 +15,7 @@
     font-family: var(--garcia-font-family-sans);
     font-size: var(--garcia-font-size-xs);
     font-weight: var(--garcia-font-weight-semibold);
-    letter-spacing: var(--garcia-letter-spacing-wide);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--garcia-color-gold);
     margin-bottom: var(--garcia-spacing-3);
@@ -31,7 +27,6 @@
     }
   }
 
-  /* ─── Grid ─────────────────────────────────────────────────────── */
   .featured-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -52,12 +47,10 @@
     }
   }
 
-  /* ─── Card ─────────────────────────────────────────────────────── */
   .featured-card {
     display: flex;
     flex-direction: column;
     background-color: var(--garcia-surface-primary);
-    border: 1px solid var(--garcia-border-light);
     border-radius: var(--garcia-radius-lg);
     overflow: hidden;
     box-shadow: 0 2px 8px rgb(0 0 0 / 0.04);
@@ -67,11 +60,34 @@
   }
 
   .featured-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgb(0 0 0 / 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgb(0 0 0 / 0.08);
   }
 
-  /* ─── Image ────────────────────────────────────────────────────── */
+  @media (width >= 80rem) {
+    .featured-card:nth-child(1) {
+      grid-column: 1 / -1;
+      flex-direction: row;
+    }
+
+    .featured-card:nth-child(1) .featured-card-image {
+      width: 50%;
+      aspect-ratio: auto;
+      min-height: 22rem;
+      flex-shrink: 0;
+    }
+
+    .featured-card:nth-child(1) .featured-card-body {
+      justify-content: center;
+      padding: var(--garcia-spacing-8);
+    }
+
+    .featured-card:nth-child(1) .featured-card-name {
+      font-size: var(--garcia-font-size-2xl);
+      line-height: var(--garcia-line-height-2xl);
+    }
+  }
+
   .featured-card-image {
     position: relative;
     aspect-ratio: 4 / 5;
@@ -91,29 +107,31 @@
   }
 
   .featured-card:hover .featured-card-image img {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
 
-  /* ─── Image Badge (overlay) ────────────────────────────────────── */
   .featured-badge-image {
     position: absolute;
     inset-block-start: var(--garcia-spacing-3);
     inset-inline-start: var(--garcia-spacing-3);
     z-index: 1;
-    padding: var(--garcia-spacing-1) var(--garcia-spacing-2);
-    border-radius: var(--garcia-radius-sm);
-    background-color: rgb(0 0 0 / 0.6);
+    padding: var(--garcia-spacing-1) var(--garcia-spacing-3);
+    border-radius: var(--garcia-radius-full);
+    background: linear-gradient(
+      135deg,
+      rgb(201 168 76 / 0.9) 0%,
+      rgb(201 168 76 / 0.7) 100%
+    );
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    color: var(--garcia-color-gold-light);
+    color: var(--garcia-color-charcoal);
     font-size: var(--garcia-font-size-xs);
     font-weight: var(--garcia-font-weight-semibold);
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: 0.04em;
     white-space: nowrap;
   }
 
-  /* ─── Card Body ────────────────────────────────────────────────── */
   .featured-card-body {
     display: flex;
     flex-direction: column;
@@ -141,10 +159,9 @@
     font-size: var(--garcia-font-size-sm);
     line-height: var(--garcia-line-height-sm);
     font-weight: var(--garcia-font-weight-normal);
-    color: var(--garcia-text-secondary);
+    color: var(--garcia-text-tertiary);
   }
 
-  /* ─── Inline Badges ────────────────────────────────────────────── */
   .featured-card-badges {
     display: flex;
     flex-wrap: wrap;
@@ -173,46 +190,47 @@
     color: var(--garcia-color-primary-600);
   }
 
-  /* ─── Price ────────────────────────────────────────────────────── */
   .featured-card-price {
-    font-size: var(--garcia-font-size-lg);
-    line-height: var(--garcia-line-height-lg);
-    font-weight: var(--garcia-font-weight-medium);
+    font-family: var(--garcia-font-family-display);
+    font-size: var(--garcia-font-size-2xl);
+    line-height: var(--garcia-line-height-2xl);
+    font-weight: var(--garcia-font-weight-bold);
     color: var(--garcia-color-gold-dark);
     letter-spacing: var(--garcia-letter-spacing-tight);
   }
 
-  /* ─── Divider ──────────────────────────────────────────────────── */
-  .featured-card-divider {
-    width: 100%;
-    height: 1px;
-    background-color: var(--garcia-border-light);
-    border: none;
-    margin: 0;
+  .featured-card-price::before {
+    content: "$";
+    font-size: var(--garcia-font-size-base);
+    font-weight: var(--garcia-font-weight-normal);
+    opacity: 0.5;
+    margin-inline-end: 1px;
   }
 
-  /* ─── Per-card CTA ─────────────────────────────────────────────── */
+  .featured-card-divider {
+    display: none;
+  }
+
   .featured-card-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: var(--garcia-spacing-2);
-    font-size: var(--garcia-font-size-sm);
+    font-size: var(--garcia-font-size-xs);
     font-weight: var(--garcia-font-weight-medium);
-    color: var(--garcia-text-secondary);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--garcia-color-gold-dark);
     text-decoration: none;
-    padding: var(--garcia-spacing-2) 0;
+    padding: var(--garcia-spacing-1) 0;
     transition:
-      color var(--garcia-duration-fast) var(--garcia-ease-out),
       gap var(--garcia-duration-fast) var(--garcia-ease-out);
   }
 
   .featured-card-whatsapp:hover,
   .featured-card-whatsapp:focus-visible {
-    color: var(--garcia-color-primary-600);
     gap: var(--garcia-spacing-3);
   }
 
-  /* ─── Bottom CTA ───────────────────────────────────────────────── */
   .featured-footer {
     text-align: center;
     margin-top: var(--garcia-spacing-12);
@@ -226,24 +244,22 @@
 
   .featured-footer .btn {
     background: transparent;
-    border-color: var(--garcia-color-primary-500);
-    color: var(--garcia-color-primary-500);
+    border-color: var(--garcia-color-gold);
+    color: var(--garcia-color-gold-dark);
     letter-spacing: 0.04em;
     transition:
-      background-color var(--garcia-duration-fast) var(--garcia-ease-out),
-      color var(--garcia-duration-fast) var(--garcia-ease-out),
-      border-color var(--garcia-duration-fast) var(--garcia-ease-out);
+      background-color var(--garcia-duration-slow) var(--garcia-ease-out),
+      color var(--garcia-duration-slow) var(--garcia-ease-out),
+      border-color var(--garcia-duration-slow) var(--garcia-ease-out),
+      transform var(--garcia-duration-slow) var(--garcia-ease-out);
   }
 
   .featured-footer .btn:hover:not(:disabled) {
-    background-color: var(--garcia-color-primary-50);
-    border-color: var(--garcia-color-primary-600);
-    color: var(--garcia-color-primary-600);
+    background-color: var(--garcia-color-gold);
+    border-color: var(--garcia-color-gold);
+    color: var(--garcia-color-charcoal);
+    transform: translateY(-2px);
   }
-
-  /* ═══════════════════════════════════════════════════════════════════
-     CARD ENTRY ANIMATION
-     ═══════════════════════════════════════════════════════════════════ */
 
   .featured-card-enter {
     opacity: 0;
@@ -251,7 +267,7 @@
   }
 
   .featured-card-enter-active {
-    animation: featured-card-in 600ms var(--garcia-ease-out) forwards;
+    animation: featured-card-in 700ms var(--garcia-ease-out) forwards;
   }
 
   @keyframes featured-card-in {
@@ -264,10 +280,6 @@
       transform: translateY(0);
     }
   }
-
-  /* ═══════════════════════════════════════════════════════════════════
-     REDUCED MOTION
-     ═══════════════════════════════════════════════════════════════════ */
 
   @media (prefers-reduced-motion: reduce) {
     .featured-card,

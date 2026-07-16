@@ -191,7 +191,7 @@ export function FeaturedMenu({
                     </div>
                   ) : null}
 
-                  <span className="featured-card-price">${dish.price}</span>
+                  <span className="featured-card-price">{dish.price}</span>
 
                   <hr className="featured-card-divider" />
 
