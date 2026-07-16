@@ -54,9 +54,10 @@
     background: linear-gradient(
       to top,
       rgb(0 0 0 / 0.65) 0%,
-      rgb(0 0 0 / 0.45) 40%,
-      rgb(0 0 0 / 0.2) 70%,
-      rgb(0 0 0 / 0) 100%
+      rgb(0 0 0 / 0.45) 30%,
+      rgb(0 0 0 / 0.25) 55%,
+      rgb(0 0 0 / 0.08) 80%,
+      rgb(0 0 0 / 0.12) 100%
     );
   }
 
@@ -107,23 +108,12 @@
     }
   }
 
-  .hero-overline {
-    display: block;
-    font-family: var(--garcia-font-family-sans);
-    font-size: var(--garcia-font-size-xs);
-    font-weight: var(--garcia-font-weight-semibold);
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: rgb(255 255 255 / 0.5);
-    margin-bottom: var(--garcia-spacing-5);
-  }
-
   .hero-bar {
     display: block;
-    width: 2.5rem;
-    height: 2px;
+    width: 3rem;
+    height: 3px;
     background-color: var(--garcia-color-gold);
-    border-radius: 1px;
+    border-radius: 2px;
     margin-inline: auto;
     margin-bottom: var(--garcia-spacing-6);
   }
@@ -168,7 +158,7 @@
     color: rgb(255 255 255 / 0.7);
     max-width: 35ch;
     margin-inline: auto;
-    margin-bottom: var(--garcia-spacing-10);
+    margin-bottom: var(--garcia-spacing-12);
     text-shadow: 0 1px 12px rgb(0 0 0 / 0.25);
   }
 
@@ -176,7 +166,7 @@
     .hero-tagline {
       font-size: var(--garcia-font-size-xl);
       line-height: 1.8;
-      margin-bottom: var(--garcia-spacing-12);
+      margin-bottom: var(--garcia-spacing-16);
     }
   }
 
@@ -272,51 +262,42 @@
     width: 1px;
     height: 2.5rem;
     background: linear-gradient(to bottom, rgb(255 255 255 / 0.5), transparent);
-    animation: hero-scroll-pulse 2.5s var(--garcia-ease-in-out) infinite;
+    animation: hero-scroll-fade 2.5s var(--garcia-ease-in-out) infinite;
   }
 
-  @keyframes hero-scroll-pulse {
+  @keyframes hero-scroll-fade {
     0%,
     100% {
       opacity: 1;
-      transform: scaleY(1);
-      transform-origin: top;
     }
     50% {
-      opacity: 0.3;
-      transform: scaleY(0.6);
-      transform-origin: top;
+      opacity: 0.2;
     }
   }
 
   .hero-name {
-    animation: hero-fade-in 800ms var(--garcia-ease-out) both;
+    animation: hero-fade-in 1000ms var(--garcia-ease-out) both;
   }
 
   .hero-tagline {
     opacity: 0;
-    animation: hero-fade-in 800ms var(--garcia-ease-out) 200ms both;
-  }
-
-  .hero-overline {
-    opacity: 0;
-    animation: hero-fade-in 800ms var(--garcia-ease-out) both;
+    animation: hero-fade-in 1000ms var(--garcia-ease-out) 250ms both;
   }
 
   .hero-bar {
     opacity: 0;
-    animation: hero-bar-in 600ms var(--garcia-ease-out) 300ms forwards;
+    animation: hero-bar-in 700ms var(--garcia-ease-out) 300ms forwards;
   }
 
   .hero-cta {
     opacity: 0;
-    animation: hero-fade-in 800ms var(--garcia-ease-out) 500ms both;
+    animation: hero-fade-in 1000ms var(--garcia-ease-out) 500ms both;
   }
 
   @keyframes hero-fade-in {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(24px);
     }
     to {
       opacity: 1;
@@ -343,7 +324,6 @@
 
     .hero-name,
     .hero-tagline,
-    .hero-overline,
     .hero-bar,
     .hero-cta {
       animation: none;

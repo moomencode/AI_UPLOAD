@@ -66,7 +66,6 @@ export function HeroSection({
       <div className="hero-overlay-vignette" aria-hidden="true" />
 
       <div className="hero-content">
-        <span className="hero-overline">Mediterranean Dining</span>
         <span className="hero-bar" aria-hidden="true" />
         <h1 className="hero-name">{name}</h1>
         <p className="hero-tagline">{tagline}</p>
