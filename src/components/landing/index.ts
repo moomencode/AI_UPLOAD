@@ -14,3 +14,5 @@ export { SocialProof } from "./social-proof";
 export type { SocialProofProps, ReviewQuote } from "./social-proof";
 export { GallerySection } from "./gallery-section";
 export type { GallerySectionProps, GalleryItem } from "./gallery-section";
+export { ReservationSection } from "./reservation-section";
+export type { ReservationSectionProps } from "./reservation-section";

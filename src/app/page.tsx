@@ -6,6 +6,7 @@ import {
   HeroSection,
   LandingHeader,
   PremiumFooter,
+  ReservationSection,
   SocialProof,
 } from "@/components/landing";
 
@@ -20,7 +21,7 @@ export default function Home() {
         <FeaturedMenu />
         <SocialProof />
         <GallerySection />
-        <section id="reservations" style={{ height: "100vh" }} />
+        <ReservationSection />
         <section id="contact" style={{ height: "100vh" }} />
       </main>
       <PremiumFooter />
